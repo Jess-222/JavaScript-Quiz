@@ -2,6 +2,12 @@ let startBtn = document.getElementById("start")
 let startMenu = document.getElementById("startMenu")
 let timer = document.getElementById("timer")
 let quizSection = document.getElementById("quizSection")
+let question = document.getElementById("question")
+let answerA = document.getElementById("answerA")
+let answerB = document.getElementById("answerB")
+let answerC = document.getElementById("answerC")
+let answerD = document.getElementById("answerD")
+
 
 var questions = [
     {
@@ -19,7 +25,7 @@ var questions = [
         c: "C. #",
         d: "D. none of the above",
         correct: "C. #"
-    }
+    },
     {
         q: "The element selector ul is an abbreviation for which of the following?",
         a: "A. unordered list",
@@ -35,13 +41,31 @@ function renderPageLoad() {
     quizSection.style.display = "none";
 }
 
+function runQuiz() {
+    timer.textContent = "Time: " + timerCount;
+    question.textContent = questions[0].q
+    answerA.textContent = questions[0].a
+    answerB.textContent = questions[0].b
+    answerC.textContent = questions[0].c
+    answerD.textContent = questions[0].d
+}
+
+renderPageLoad();
+//to begin quiz (start button)
 startBtn.addEventListener("click", function () {
     startTimer();
     startMenu.style = "display:none";
+    quizSection.style.display = "block";
+    runQuiz();
 });
 
+//timer and start quiz
 function startTimer() {
-    setInterval(function () {
-
+    let countdown = setInterval(function () {
+        timerCount--;
+        timer.textContent = "Time: " + timerCount;
+        if (timerCount === 0) {
+            clearInterval(countdown)
+        }
     }, 1000);
 }
