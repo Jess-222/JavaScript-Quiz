@@ -36,7 +36,7 @@ var questions = [
     }
 ];
 
-timerCount = 5s;
+timerCount = 5;
 function renderPageLoad() {
     quizSection.style.display = "none";
 }
