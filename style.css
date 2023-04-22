@@ -1,0 +1,15 @@
+.answers {
+padding:0;
+}
+
+.answers li {
+    list-style-type: none;
+    color: white;
+    background: teal;
+    width: 100px;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
