@@ -1,4 +1,18 @@
-.answers {
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(100,9,121,0.48804620343839544) 35%, rgba(0,212,255,1) 100%);
+    height: 100vh;
+    margin: 0px;
+}
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*.answers {
 padding:0;
 }
 
