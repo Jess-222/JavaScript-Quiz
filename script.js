@@ -70,3 +70,8 @@ function startTimer() {
         }
     }, 1000);
 }
+
+answerA.addEventListener("click", manageSelectionA)
+answerB.addEventListener("click", manageSelectionB)
+answerC.addEventListener("click", manageSelectionC)
+answerD.addEventListener("click", manageSelectionD)
