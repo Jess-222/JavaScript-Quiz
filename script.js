@@ -7,6 +7,10 @@ let answerA = document.getElementById("answerA");
 let answerB = document.getElementById("answerB");
 let answerC = document.getElementById("answerC");
 let answerD = document.getElementById("answerD");
+let initialForm = document.getElementById("initialForm");
+let scoreSection = document.getElementById("scoreSection");
+let initials = document.getElementById("initials");
+let endMenu= document.getElementById("endMenu");
 
 
 var questions = [
@@ -37,10 +41,18 @@ var questions = [
 ];
 
 score = 0;
-timerCount = 5;
+timerCount = 10;
 questionCount = 0;
+let storedUsers;
 function renderPageLoad() {
     quizSection.style.display = "none";
+    endMenu.style.display = "none";
+    if (JSON.parse(localStorage.getItem("highscores"))=== null) {
+        storedUsers = [];
+    } else {
+        storedUsers = JSON.parse(localStorage.getItem("highscores"));
+    }
+    console.log(storedUsers);
 }
 
 function runQuiz() {
@@ -61,6 +73,7 @@ startBtn.addEventListener("click", function () {
     startTimer();
     startMenu.style.display = "none";
     quizSection.style.display = "block";
+    endMenu.style.display = "none";
     runQuiz();
 });
 
@@ -78,48 +91,52 @@ function startTimer() {
 //manage user decision
 function manageSelectionA() {
     if (questions[questionCount].answer === "a") {
-        questionCount++
-        score += 10
+        questionCount++;
+        score += 10;
         console.log("correct");
     } else {
-        questionCount++
         console.log("wrong");
+        timerCount-=5;
+        questionCount++;
     }
     runQuiz()
 }
 
 function manageSelectionB() {
     if (questions[questionCount].answer === "b") {
-        questionCount++
-        score += 10
+        questionCount++;
+        score += 10;
         console.log("correct");
     } else {
-        questionCount++
         console.log("wrong");
+        timerCount-=5;
+        questionCount++;
     }
     runQuiz()
 }
 
 function manageSelectionC() {
     if (questions[questionCount].answer === "c") {
-        questionCount++
-        score += 10
+        questionCount++;
+        score += 10;
         console.log("correct");
     } else {
-        questionCount++
         console.log("wrong");
+        timerCount-=5;
+        questionCount++;
     }
     runQuiz()
 }
 
 function manageSelectionD() {
     if (questions[questionCount].answer === "d") {
-        questionCount++
-        score += 10
+        questionCount++;
+        score += 10;
         console.log("correct");
     } else {
-        questionCount++
         console.log("wrong");
+        timerCount-=5;
+        questionCount++;
     }
     runQuiz()
 }
@@ -127,3 +144,21 @@ answerA.addEventListener("click", manageSelectionA)
 answerB.addEventListener("click", manageSelectionB)
 answerC.addEventListener("click", manageSelectionC)
 answerD.addEventListener("click", manageSelectionD)
+
+function endQUiz () {
+    quizSection.style.display = "none";
+    endMenu.style.display = "flex";
+    console.log(score);
+}
+
+function saveScore(e) {
+    e.preventDefault();
+    newScore = {
+        user: initials.value,
+        userScore: score,
+    };
+    storedUsers.push(newScore);
+    localStorage.setItem("highscores", JSON.stringify(storedUsers));
+    window.location.href ="highscores.html";
+}
+initialForm.addEventListener("submit", saveScore);
