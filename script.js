@@ -56,7 +56,7 @@ function renderPageLoad() {
 }
 
 function runQuiz() {
-    if(questionCount === 3) {
+    if(questionCount === 3 || timerCount <= 0) {
         return endQUiz();
     }
     timer.textContent = "Time: " + timerCount;
@@ -82,8 +82,9 @@ function startTimer() {
     let countdown = setInterval(function () {
         timerCount--;
         timer.textContent = "Time: " + timerCount;
-        if (timerCount === 0) {
-            clearInterval(countdown)
+        if (timerCount <= 0) {
+            clearInterval(countdown);
+            endQUiz();
         }
     }, 1000);
 }
@@ -145,6 +146,7 @@ answerB.addEventListener("click", manageSelectionB)
 answerC.addEventListener("click", manageSelectionC)
 answerD.addEventListener("click", manageSelectionD)
 
+//end quiz and provide input for usr initials
 function endQUiz () {
     quizSection.style.display = "none";
     endMenu.style.display = "flex";
