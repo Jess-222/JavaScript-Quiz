@@ -5,7 +5,7 @@ body {
     margin: 0px;
 }
 
-#StartMenu, #endMenu {
+#startMenu, #endMenu {
     display: flex;
     justify-content: center;
     align-items: center;
