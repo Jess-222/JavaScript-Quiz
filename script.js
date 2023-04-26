@@ -36,13 +36,17 @@ var questions = [
     },
 ];
 
+score = 0;
 timerCount = 5;
 questionCount = 0;
 function renderPageLoad() {
-  quizSection.style.display = "none";
+    quizSection.style.display = "none";
 }
 
 function runQuiz() {
+    if(questionCount === 3) {
+        return endQUiz();
+    }
     timer.textContent = "Time: " + timerCount;
     question.textContent = questions[questionCount].q;
     answerA.textContent = questions[questionCount].a;
@@ -71,6 +75,54 @@ function startTimer() {
     }, 1000);
 }
 
+//manage user decision
+function manageSelectionA() {
+    if (questions[questionCount].answer === "a") {
+        questionCount++
+        score += 10
+        console.log("correct");
+    } else {
+        questionCount++
+        console.log("wrong");
+    }
+    runQuiz()
+}
+
+function manageSelectionB() {
+    if (questions[questionCount].answer === "b") {
+        questionCount++
+        score += 10
+        console.log("correct");
+    } else {
+        questionCount++
+        console.log("wrong");
+    }
+    runQuiz()
+}
+
+function manageSelectionC() {
+    if (questions[questionCount].answer === "c") {
+        questionCount++
+        score += 10
+        console.log("correct");
+    } else {
+        questionCount++
+        console.log("wrong");
+    }
+    runQuiz()
+}
+
+function manageSelectionD() {
+    if (questions[questionCount].answer === "d") {
+        questionCount++
+        score += 10
+        console.log("correct");
+    } else {
+        questionCount++
+        console.log("wrong");
+    }
+    runQuiz()
+}
 answerA.addEventListener("click", manageSelectionA)
 answerB.addEventListener("click", manageSelectionB)
 answerC.addEventListener("click", manageSelectionC)
