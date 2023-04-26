@@ -100,7 +100,7 @@ function manageSelectionA() {
         timerCount-=5;
         questionCount++;
     }
-    runQuiz()
+    runQuiz();
 }
 
 function manageSelectionB() {
