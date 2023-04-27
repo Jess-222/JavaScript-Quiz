@@ -7,7 +7,7 @@ let answerA = document.getElementById("answerA");
 let answerB = document.getElementById("answerB");
 let answerC = document.getElementById("answerC");
 let answerD = document.getElementById("answerD");
-let initialForm = document.getElementById("initialForm");
+let initialForm = document.getElementById("initialsForm");
 let scoreSection = document.getElementById("scoreSection");
 let initials = document.getElementById("initials");
 let endMenu= document.getElementById("endMenu");
@@ -20,7 +20,7 @@ var questions = [
         b: "B. curly brackets",
         c: "C. angle brackets",
         d: "D. quotation marks",
-        answer: "D. quotation marks",
+        answer: "d",
     },
     {
         q: "Which symbol indicates an ID?",
@@ -28,7 +28,7 @@ var questions = [
         b: "B. $",
         c: "C. #",
         d: "D. none of the above",
-        answer: "C. #",
+        answer: "c",
     },
     {
         q: "The element selector ul is an abbreviation for which of the following?",
@@ -36,7 +36,7 @@ var questions = [
         b: "B. unused listener",
         c: "C. unusually loud",
         d: "D. unfortunate lie",
-        answer: "A. unordered list",
+        answer: "a",
     },
 ];
 
