@@ -41,7 +41,7 @@ var questions = [
 ];
 
 score = 0;
-timerCount = 10;
+timerCount = 30;
 questionCount = 0;
 let storedUsers;
 function renderPageLoad() {
@@ -163,4 +163,4 @@ function saveScore(e) {
     localStorage.setItem("highscores", JSON.stringify(storedUsers));
     window.location.href ="highscores.html";
 }
-initialForm.addEventListener("submit", saveScore);
+initialsForm.addEventListener("submit", saveScore);
