@@ -20,6 +20,15 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 
+## Images
+
+![siteImg](./images/quiz%20landing%20page%20-%20Copy.png)
+
+![siteImg](./images/quiz%20shot%20-%20Copy.png)
+
+![siteImg](./images/scores%20page%20-%20Copy.png)
+
+
 ## link
 
 https://jess-222.github.io/JavaScript-Quiz/
